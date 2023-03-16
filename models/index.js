@@ -1,5 +1,5 @@
-const Admins = require("./admins.js");
-const Accounts = require("./accounts.js");
-const Users = require("./users.js");
+import Admins from "./admins.js";
+import Accounts from "./accounts.js";
+import Users from "./users.js";
 
-module.exports = { Admins, Accounts, Users };
+export { Admins, Accounts, Users };

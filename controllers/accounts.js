@@ -1,9 +1,10 @@
-const express = require("express");
+import express from "express";
+import { Accounts, Users } from "../models/index.js";
+
 const router = express.Router();
-const { Accounts, Users } = require("../models");
 
 router.get("/", (req, res) => {
   res.send("Accounts under construction");
 })
 
-module.exports = router;
+export default router;

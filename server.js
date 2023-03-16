@@ -1,11 +1,16 @@
-const express = require("express");
-const methodOverride = require("method-override");
-const mongoose = require("mongoose");
+import express from "express";
+import methodOverride from "method-override";
+import mongoose from "mongoose";
+import path from "path";
+import { fileURLToPath } from 'url';
+import {
+  admins as adminsRouter,
+  accounts as accountsRouter
+} from "./controllers/index.js";
 
 const app = express();
-const path = require("path");
-const { admins: adminsRouter, accounts: accountsRouter } = require("./controllers");
 const port = 3000;
+const __dirname = fileURLToPath(new URL('.', import.meta.url));
 const mongoURI = "mongodb://localhost:27017/msantos";
 mongoose.connect(mongoURI);
 

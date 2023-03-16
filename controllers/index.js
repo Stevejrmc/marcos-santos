@@ -1,4 +1,4 @@
-const admins = require("./admins.js");
-const accounts = require("./accounts.js");
+import admins from "./admins.js";
+import accounts from "./accounts.js";
 
-module.exports = { admins, accounts };
+export { admins, accounts };
