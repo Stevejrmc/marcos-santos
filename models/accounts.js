@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { SchemaType } from "mongoose";
 const Schema = mongoose.Schema;
 
 const accountSchema = new Schema({
@@ -18,7 +18,8 @@ const accountSchema = new Schema({
       zip: Number
     }
   },
-  userId: String,
+  plan: {},
+  userId: { type: Number, required: true },
 });
 
 const Account = mongoose.model("Account", accountSchema);
