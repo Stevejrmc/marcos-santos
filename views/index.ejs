@@ -6,7 +6,7 @@
   <% if (!isAuthenticated) { %>
     <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#sign-in">Sign in</button>
   <% } else {%>
-    <a href="/signout" class="btn btn-danger">Sign out</a>
+    <a href="/auth/signout" class="btn btn-danger">Sign out</a>
   <% } %>
   <% if (path == "accounts") { %>
    <%- include("./partials/accounts.ejs", { account, user }) %>
