@@ -1,20 +1,16 @@
 <%- include("./partials/header.ejs") %>
   <!-- include navbar here  -->
-<div class="container">
-  <h1>Marcos Santos</h1>
-  <p>Under construction...</p>
-  <% if (!isAuthenticated) { %>
-    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#sign-in">Sign in</button>
-  <% } else {%>
-    <a href="/auth/signout" class="btn btn-danger">Sign out</a>
-  <% } %>
-  <% if (path == "accounts") { %>
-   <%- include("./partials/accounts.ejs", { account, user }) %>
-  <% } %>
-  <%- include("./partials/login.ejs") %>
-  <%- include("./partials/registration.ejs") %>
-  <% if (message) { %>
-    <p><%= message %></p>
-  <% } %>
-</div>
+  <div id="container">
+    <!-- <h1>Marcos Santos</h1> -->
+    <% if (path == "accounts") { %>
+      <%- include("./partials/accounts.ejs", { account, user }) %>
+     <% } %>
+  </div>
+  <div>
+   <%- include("./partials/login.ejs") %>
+   <%- include("./partials/registration.ejs") %>
+   <% if (message) { %>
+     <p><%= message %></p>
+   <% } %>
+  </div>
 <%- include("./partials/footer.ejs") %>

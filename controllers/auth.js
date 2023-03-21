@@ -44,7 +44,6 @@ const checkAuth = (req, res, next) => {
   } else {
     switch (route) {
       case "services":
-      case "prices":
       case "about":
       case "faqs":
       case "auth":

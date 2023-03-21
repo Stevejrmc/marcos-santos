@@ -1,0 +1,35 @@
+@import "./header";
+@import "./footer";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  a:hover {
+    cursor: pointer;
+  }
+}
+
+#container {
+  height: 100vh;
+  background-image: url("https://images.pexels.com/photos/4633656/pexels-photo-4633656.jpeg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+
+  #account {
+    position: relative;
+    font-size: 1rem;
+    text-align: center;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 5px;
+    width: 50%;
+    height: 75%;
+  }
+}
