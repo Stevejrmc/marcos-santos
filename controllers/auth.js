@@ -17,7 +17,10 @@ const mockSession = {
 const checkAuth = (req, res, next) => {
   const { currentUser } = mockSession;
   const route = req.url.split("/")[1] || "home";
-  const routeID = req.url.split("/")[2];
+  let routeID = req.url.split("/")[2];
+  if (routeID) {
+    routeID = routeID.length > 1 ? routeID.charAt(0) : routeID;
+  };
   let redirectRoute = "/";
   if (currentUser) {
     res.locals.currentUser = currentUser;
