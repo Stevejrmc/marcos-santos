@@ -1,9 +1,28 @@
 <div class="tab-pane fade show active" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
   <h5><%=user.firstName%>'s Profile</h5>
-  <p>
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident hic blanditiis eos nobis ex suscipit voluptatibus perferendis quaerat officia unde.
-  </p>
-  <p>
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque minima unde, perferendis, dolor quisquam quis error nemo quibusdam quod nulla beatae reprehenderit quo quae molestias officia ipsum recusandae esse mollitia magnam odio est quos. Dolorem quaerat temporibus facere dicta modi!
-  </p>
+  <% if (account.profile.age) { %>
+    <div class="card" style="width: 18rem; margin: 0 auto;">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><%= account.profile.age %></li>
+        <li class="list-group-item"><%= account.profile.weight %></li>
+      </ul>
+      <a href="/account/<%= user.userId %>/edit" type="button" class="btn btn-secondary">Update</a>
+    </div>
+  <% } else { %>
+    <form action="/account/<%=user.userId%>?_method=PUT" method="POST" class="row">
+      <div class="row" style="justify-content: center;">
+        <div class="col-md-2 mb-3">
+          <label for="age" class="form-label">Age</label>
+          <input type="text" name="age" class="form-control" id="age">
+        </div>
+        <div class="col-md-2">
+          <label for="weight" class="form-label">Weight</label>
+          <input type="weight" name="weight" class="form-control" id="weight">
+        </div>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-success">Save</button>
+      </div>
+    </form>
+  <% } %>
 </div>

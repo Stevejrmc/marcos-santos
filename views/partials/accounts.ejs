@@ -12,8 +12,8 @@
     </li>
   </ul>
   <div class="tab-content" id="myTabContent">
-    <%- include("./profile.ejs", { user }) %>
-    <%- include("./settings.ejs", { user }) %>
-    <%- include("./billing.ejs", { user }) %>
+    <%- include("./profile.ejs", { user, account }) %>
+    <%- include("./settings.ejs", { user, account }) %>
+    <%- include("./billing.ejs", { user, account }) %>
   </div>
 </div>

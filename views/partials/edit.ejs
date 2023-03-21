@@ -1,0 +1,18 @@
+<div class="editor">
+  <h2><%= user.firstName %>'s</h2>
+  <form action="/account/<%=user.userId%>?_method=PUT" method="POST" class="row">
+    <div class="row" style="justify-content: center;">
+      <div class="col-md-2 mb-3">
+        <label for="age" class="form-label">Age</label>
+        <input type="text" name="age" class="form-control" id="age" placeholder="<%= account.profile.age %>">
+      </div>
+      <div class="col-md-2">
+        <label for="weight" class="form-label">Weight</label>
+        <input type="weight" name="weight" class="form-control" id="weight" placeholder="<%= account.profile.weight %>">
+      </div>
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-success">Save</button>
+    </div>
+  </form>
+</div>

@@ -11,7 +11,6 @@ router.get("/:id", (req, res) => {
       res.locals.message ||= "";
       const { isAuthenticated } = res.locals.mockAuth;
       const { currentUser, message } = res.locals;
-      console.log("user: ", currentUser);
       res.render("index", {
         account,
         user: currentUser,
@@ -24,6 +23,36 @@ router.get("/:id", (req, res) => {
       res.redirect("/");
     }
   })
+});
+
+router.get("/:id/edit", (req, res) => {
+  Accounts.findOne({ userId: req.params.id }).then(account => {
+    if (account) {
+      res.locals.message ||= "";
+      const {
+        currentUser: user,
+        isAuthenticated,
+        message
+      } = res.locals;
+      res.render("index", {
+        path: "edit",
+        account,
+        user,
+        isAuthenticated,
+        message
+      });
+    }
+  })
+});
+
+router.put("/:id", (req, res) => {
+  Accounts.findOneAndUpdate({ userId: req.params.id }, { profile: req.body }).then(success => {
+    if (success) {
+      res.redirect(`/account/${req.params.id}`);
+    } else {
+      res.send("Error occurred");
+    }
+  });
 });
 
 router.delete("/:id", (req, res) => {
